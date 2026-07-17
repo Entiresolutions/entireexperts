@@ -13,12 +13,15 @@
   --foreground-muted: #4b4b5a;
   --border: #e4e4ec;
 
-  --brand: #4338ca;
-  --brand-strong: #362eab;
-  --brand-soft: #eef0fd;
-  --accent: #d97706;
-  --accent-strong: #b45309;
-  --accent-soft: #fef3e2;
+  /* Brand palette sampled directly from the EntireXperts logo (public/entirexperts-logo.png):
+     blue #1068e0 ("NTIRE") and teal #28b0a0 ("XPERTS"). --brand/--accent are darkened
+     slightly from the raw logo colors so white button text clears WCAG AA (4.5:1). */
+  --brand: #1068e0;
+  --brand-strong: #0c4ba2;
+  --brand-soft: #e7f1fd;
+  --accent: #1c7d71;
+  --accent-strong: #155b53;
+  --accent-soft: #e2f8f5;
 
   --success: #16794f;
   --danger: #b91c1c;
@@ -34,12 +37,12 @@
   --foreground-muted: #b3b3c2;
   --border: #262638;
 
-  --brand: #8b85f0;
-  --brand-strong: #a7a2f5;
-  --brand-soft: #201d40;
-  --accent: #f0b155;
-  --accent-strong: #f7c778;
-  --accent-soft: #322411;
+  --brand: #4f94f2;
+  --brand-strong: #7aaef5;
+  --brand-soft: #14263d;
+  --accent: #2fc2b1;
+  --accent-strong: #59d9ca;
+  --accent-soft: #15322f;
 
   --success: #4ade80;
   --danger: #f87171;

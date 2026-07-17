@@ -15,7 +15,7 @@ export function emailLayout({ title, bodyHtml }: { title: string; bodyHtml: stri
         <td align="center">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #e4e4ec;">
             <tr>
-              <td style="background:#4338ca;padding:24px 32px;">
+              <td style="background:#1068e0;padding:24px 32px;">
                 <span style="color:#ffffff;font-size:18px;font-weight:700;">${siteConfig.name}</span>
               </td>
             </tr>
