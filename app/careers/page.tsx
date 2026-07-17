@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { JsonLd } from "@/components/ui/json-ld";
 import { webPageSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { companyContact } from "@/content/company";
+import { companyEmails } from "@/content/company";
 
 const title = "Careers";
 const description = "Open roles at EntireXperts and how to reach out if you don't see a current match for your background.";
@@ -47,8 +47,8 @@ export default function CareersPage() {
             <h2 className="font-semibold text-foreground">Want to be considered for future roles?</h2>
             <p className="mt-2 text-sm leading-relaxed text-foreground-muted">
               Send a short note and your background to{" "}
-              <a href={`mailto:${companyContact.email}`} className="text-brand hover:underline">
-                {companyContact.email}
+              <a href={`mailto:${companyEmails.careers}`} className="text-brand hover:underline">
+                {companyEmails.careers}
               </a>
               . We keep relevant profiles on file and reach out when a fitting role opens up.
             </p>

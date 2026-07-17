@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/ui/json-ld";
 import { contactPageSchema, webPageSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { ContactForm } from "@/components/features/contact/contact-form";
-import { companyContact } from "@/content/company";
+import { companyContact, companyEmails } from "@/content/company";
 
 const title = "Contact Us";
 const description =
@@ -37,6 +37,41 @@ export default function ContactPage() {
                   {companyContact.email}
                 </a>
               </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-surface p-6">
+              <h2 className="font-semibold text-foreground">Reach the right team directly</h2>
+              <ul className="mt-3 space-y-2 text-sm text-foreground-muted">
+                <li>
+                  New projects & quotes:{" "}
+                  <a href={`mailto:${companyEmails.sales}`} className="text-brand hover:underline">
+                    {companyEmails.sales}
+                  </a>
+                </li>
+                <li>
+                  Existing customer support:{" "}
+                  <a href={`mailto:${companyEmails.support}`} className="text-brand hover:underline">
+                    {companyEmails.support}
+                  </a>
+                </li>
+                <li>
+                  Careers:{" "}
+                  <a href={`mailto:${companyEmails.careers}`} className="text-brand hover:underline">
+                    {companyEmails.careers}
+                  </a>
+                </li>
+                <li>
+                  Billing & invoices:{" "}
+                  <a href={`mailto:${companyEmails.billing}`} className="text-brand hover:underline">
+                    {companyEmails.billing}
+                  </a>
+                </li>
+                <li>
+                  Partnerships:{" "}
+                  <a href={`mailto:${companyEmails.partnerships}`} className="text-brand hover:underline">
+                    {companyEmails.partnerships}
+                  </a>
+                </li>
+              </ul>
             </div>
             <div className="rounded-2xl border border-border bg-surface p-6">
               <h2 className="font-semibold text-foreground">What happens after you submit</h2>

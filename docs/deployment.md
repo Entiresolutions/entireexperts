@@ -14,7 +14,7 @@ Copy `.env.example` to `.env.local` for local development, and configure the sam
 |---|---|---|
 | `SITE_URL` / `NEXT_PUBLIC_SITE_URL` | Yes | Canonical site URL used for metadata, sitemap, and OG tags. Set to `https://www.entirexperts.com` in production. |
 | `RESEND_API_KEY` | Recommended | Enables real email delivery. Without it, the app logs the event and still returns a success response to the visitor (see below). |
-| `CONTACT_TO_EMAIL` | Recommended | Inbox that receives lead notifications. |
+| `CONTACT_TO_EMAIL` | Recommended | Inbox that receives lead notifications from the contact form, quote form, and chatbot. Defaults to `sales@entirexperts.com`. |
 | `CONTACT_FROM_EMAIL` | Recommended | Must be on a domain verified with Resend. |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET_KEY` | Optional | Enables Cloudflare Turnstile anti-spam on forms. Forms work without it. |
 | `GOOGLE_SITE_VERIFICATION` | Optional | Search Console HTML-tag verification token (see section 4). |
@@ -22,6 +22,10 @@ Copy `.env.example` to `.env.local` for local development, and configure the sam
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional | Enables GA4. |
 | `NEXT_PUBLIC_GTM_ID` | Optional | Enables GTM (takes priority over GA4 direct if both are set). |
 | `NEXT_PUBLIC_CLARITY_PROJECT_ID` | Optional | Enables Microsoft Clarity. |
+
+### Department inboxes
+
+The site references six inboxes on the domain, defined in `content/company.ts` (`companyEmails`): `info@` (general/footer), `sales@` (contact/quote/chatbot lead notifications — see `CONTACT_TO_EMAIL` above), `support@`, `careers@`, `billing@`, and `partnerships@`. All six need to actually exist and be monitored before launch — the Contact page and Careers page link to them directly.
 
 ### Email behavior without Resend
 

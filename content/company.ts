@@ -8,11 +8,23 @@
  * fabricated claim.
  */
 
+/**
+ * Department inboxes. Each is a placeholder address on the real domain —
+ * TODO(owner): confirm every one of these is actually created and monitored
+ * before launch, or remove the ones that don't apply.
+ */
+export const companyEmails = {
+  general: "info@entirexperts.com",
+  sales: "sales@entirexperts.com",
+  support: "support@entirexperts.com",
+  careers: "careers@entirexperts.com",
+  billing: "billing@entirexperts.com",
+  partnerships: "partnerships@entirexperts.com",
+} as const;
+
 export const companyContact = {
-  // TODO(owner): confirm the inbox that should receive lead notifications.
-  email: "hello@entirexperts.com",
-  // TODO(owner): add a real support/billing contact if different from the above.
-  supportEmail: "support@entirexperts.com",
+  // General inbox shown as the site's primary contact address.
+  email: companyEmails.general,
   // TODO(owner): add a real phone number with country code, or remove the field
   // from the UI if the business does not take calls.
   phone: null as string | null,

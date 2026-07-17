@@ -10,7 +10,7 @@ const serverEnvSchema = z.object({
   SITE_URL: z.string().url().default("https://www.entirexperts.com"),
 
   RESEND_API_KEY: z.string().optional(),
-  CONTACT_TO_EMAIL: z.string().email().default("hello@entirexperts.com"),
+  CONTACT_TO_EMAIL: z.string().email().default("sales@entirexperts.com"),
   CONTACT_FROM_EMAIL: z.string().email().default("no-reply@entirexperts.com"),
 
   TURNSTILE_SECRET_KEY: z.string().optional(),

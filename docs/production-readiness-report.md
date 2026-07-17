@@ -32,7 +32,7 @@ Per your instruction not to invent facts, the following are deliberately left as
 
 | Item | Current state | File |
 |---|---|---|
-| Contact email, phone, address | Placeholder email (`hello@entirexperts.com`); phone and address are `null` so no unverified address is ever published in structured data | `content/company.ts` |
+| Contact emails, phone, address | Six department placeholder addresses (`info@`, `sales@`, `support@`, `careers@`, `billing@`, `partnerships@entirexperts.com`) in `companyEmails`; phone and address are `null` so no unverified address is ever published in structured data | `content/company.ts` |
 | Founding year, team size | `null` — no "since 20XX" or headcount claim is rendered anywhere | `content/company.ts` |
 | Business stats (homepage stats section) | Empty by default; falls back to honest, verifiable-by-design counts (18 services, 6 process stages, etc.) instead of invented numbers | `content/company.ts`, `components/features/home/stats-section.tsx` |
 | Testimonials | Empty array; the testimonials section renders an explicit "we're keeping this empty until we have real ones" state instead of a fake quote | `content/company.ts`, `components/features/home/testimonials-section.tsx` |
@@ -51,6 +51,7 @@ Per your instruction not to invent facts, the following are deliberately left as
 ## Known gaps / owner action items before a real launch
 
 1. **Connect Resend** (`RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`) — without this, no lead notification email will actually be delivered. See `docs/deployment.md`.
+   - **Create and monitor the six department inboxes** referenced across the site (`info@`, `sales@`, `support@`, `careers@`, `billing@`, `partnerships@entirexperts.com` — see `content/company.ts`). Contact/quote/chatbot leads default to `sales@`; the site will look broken to visitors if these addresses bounce.
 2. **Legal review** of Privacy Policy, Terms and Conditions, and Cookie Policy by qualified counsel — they're functionally complete drafts, not reviewed legal advice.
 3. **Real business facts** — fill in `content/company.ts` (contact details, founding year, team size) and `config/site.ts` (social links) as they become available.
 4. **Google Search Console verification token** (`GOOGLE_SITE_VERIFICATION`) and sitemap submission — steps documented in `docs/deployment.md`.
