@@ -33,6 +33,12 @@ export const serviceInterests = [
   "Software Maintenance & Support",
   "SEO",
   "Digital Marketing",
+  "Call Center Services (Inbound & Outbound)",
+  "Customer Support Outsourcing",
+  "Medical Billing Services",
+  "DME Billing Services",
+  "Trucking & Dispatch Services",
+  "Back-Office & Data Entry Services",
   "Not sure yet",
 ] as const;
 

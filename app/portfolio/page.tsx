@@ -11,7 +11,7 @@ import { caseStudies } from "@/content/case-studies";
 
 const title = "Portfolio & Case Studies";
 const description =
-  "Demonstration case studies showing the kind of software projects Entire Expert builds and how we approach them, from custom software to mobile apps and SaaS platforms.";
+  "Demonstration case studies showing the kind of software projects EntireXperts builds and how we approach them, from custom software to mobile apps and SaaS platforms.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/portfolio" });
 

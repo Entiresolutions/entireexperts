@@ -17,16 +17,27 @@ test.describe("Main navigation", () => {
     await page.goto("/");
 
     const primaryNav = page.getByRole("navigation", { name: "Primary" });
-    await primaryNav.getByRole("button", { name: /services/i }).click();
+    await primaryNav.getByRole("button", { name: "Services", exact: true }).click();
     await primaryNav.getByRole("link", { name: "AI Chatbot Development" }).click();
 
     await expect(page).toHaveURL("/services/ai-chatbot-development");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
   });
 
+  test("the Management Services dropdown links to a management service detail page", async ({ page }) => {
+    await page.goto("/");
+
+    const primaryNav = page.getByRole("navigation", { name: "Primary" });
+    await primaryNav.getByRole("button", { name: "Management Services", exact: true }).click();
+    await primaryNav.getByRole("link", { name: "Medical Billing Services" }).click();
+
+    await expect(page).toHaveURL("/management-services/medical-billing-services");
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  });
+
   test("logo link returns to the homepage", async ({ page }) => {
     await page.goto("/about");
-    await page.getByRole("link", { name: /entireexpert/i }).first().click();
+    await page.getByRole("link", { name: /entirexperts/i }).first().click();
     await expect(page).toHaveURL("/");
   });
 });

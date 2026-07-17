@@ -12,7 +12,7 @@ test.describe("Mobile navigation", () => {
     const nav = page.getByRole("navigation", { name: "Mobile" });
     await expect(nav).toBeVisible();
 
-    await nav.getByRole("button", { name: "Services" }).click();
+    await nav.getByRole("button", { name: "Services", exact: true }).click();
     await nav.getByRole("link", { name: "SaaS Product Development" }).click();
 
     await expect(page).toHaveURL("/services/saas-product-development");

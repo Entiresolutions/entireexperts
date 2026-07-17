@@ -6,33 +6,34 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { JsonLd } from "@/components/ui/json-ld";
 import { webPageSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
-import { services } from "@/content/services";
+import { managementServices } from "@/content/management-services";
 
-const title = "Software Development Services";
+const title = "Management Services";
 const description =
-  "Every service EntireXperts offers, from custom software and web application development to AI automation, cloud infrastructure, and digital marketing.";
+  "Outsourced business operations support from EntireXperts — call center, customer support, medical billing, DME billing, trucking dispatch, and back-office services.";
 
-export const metadata: Metadata = buildMetadata({ title, description, path: "/services" });
+export const metadata: Metadata = buildMetadata({ title, description, path: "/management-services" });
 
-export default function ServicesPage() {
+export default function ManagementServicesPage() {
   return (
     <>
-      <JsonLd data={webPageSchema({ path: "/services", title, description })} />
+      <JsonLd data={webPageSchema({ path: "/management-services", title, description })} />
       <Section className="pb-0 pt-10 sm:pt-12">
-        <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]} />
-        <SectionHeading as="h1"
-          eyebrow="Services"
-          title="Eighteen disciplines, each led by engineers who specialize in it"
-          description="Browse every service we offer below, or start with a consultation if you're not sure which one fits your project."
+        <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Management Services", path: "/management-services" }]} />
+        <SectionHeading
+          as="h1"
+          eyebrow="Management services"
+          title="Outsourced operations support, run as an extension of your team"
+          description="Six managed-operations services for teams that need reliable day-to-day execution without the overhead of building it in-house. This is a separate line from our software development work — browse Services if you're looking to build a product instead."
         />
       </Section>
 
       <Section>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {managementServices.map((service) => (
             <Link
               key={service.slug}
-              href={`/services/${service.slug}`}
+              href={`/management-services/${service.slug}`}
               className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-lg hover:shadow-brand/10"
             >
               <h2 className="flex items-center gap-1.5 text-base font-semibold text-foreground">

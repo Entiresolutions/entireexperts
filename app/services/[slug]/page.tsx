@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getAllServiceSlugs, getServiceBySlug } from "@/content/services";
+import { getAllServiceSlugs, getServiceBySlug, getRelatedServices } from "@/content/services";
 import { ServicePageTemplate } from "@/components/features/service/service-page-template";
 import { buildMetadata } from "@/lib/seo/metadata";
 
@@ -27,5 +27,5 @@ export default async function ServiceDetailPage({ params }: PageProps) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
-  return <ServicePageTemplate service={service} />;
+  return <ServicePageTemplate service={service} relatedServices={getRelatedServices(service)} />;
 }

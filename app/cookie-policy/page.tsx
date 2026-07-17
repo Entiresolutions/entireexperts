@@ -8,7 +8,7 @@ import { LegalReviewNotice } from "@/components/features/legal/legal-review-noti
 import { companyContact } from "@/content/company";
 
 const title = "Cookie Policy";
-const description = "What cookies and similar technologies Entire Expert's website uses, and how to control them.";
+const description = "What cookies and similar technologies EntireXperts's website uses, and how to control them.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/cookie-policy" });
 

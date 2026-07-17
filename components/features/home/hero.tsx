@@ -24,7 +24,7 @@ export function Hero() {
             Ship the product your roadmap keeps pushing back.
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted">
-            Entire Expert plans, builds, and ships custom software, web platforms, and mobile apps for teams
+            EntireXperts plans, builds, and ships custom software, web platforms, and mobile apps for teams
             that need senior engineering capacity now — not a six-month hiring process. You get a team that
             estimates honestly, demos weekly, and hands over code you fully own.
           </p>

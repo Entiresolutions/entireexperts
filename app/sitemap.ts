@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/seo/metadata";
 import { getAllServiceSlugs } from "@/content/services";
+import { getAllManagementServiceSlugs } from "@/content/management-services";
 import { industries } from "@/content/industries";
 import { caseStudies } from "@/content/case-studies";
 import { getPublishedPosts, getAllCategories } from "@/lib/blog";
@@ -10,6 +11,7 @@ const staticRoutes = [
   { path: "/", priority: 1, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/services", priority: 0.9, changeFrequency: "weekly" as const },
+  { path: "/management-services", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/portfolio", priority: 0.8, changeFrequency: "weekly" as const },
   { path: "/process", priority: 0.6, changeFrequency: "monthly" as const },
   { path: "/technologies", priority: 0.6, changeFrequency: "monthly" as const },
@@ -36,6 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const serviceEntries = getAllServiceSlugs().map((slug) => ({
     url: absoluteUrl(`/services/${slug}`),
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  const managementServiceEntries = getAllManagementServiceSlugs().map((slug) => ({
+    url: absoluteUrl(`/management-services/${slug}`),
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.8,
@@ -70,5 +79,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }));
 
-  return [...staticEntries, ...serviceEntries, ...industryEntries, ...caseStudyEntries, ...postEntries, ...categoryEntries];
+  return [
+    ...staticEntries,
+    ...serviceEntries,
+    ...managementServiceEntries,
+    ...industryEntries,
+    ...caseStudyEntries,
+    ...postEntries,
+    ...categoryEntries,
+  ];
 }

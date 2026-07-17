@@ -11,10 +11,10 @@ export function Logo({ className }: { className?: string }) {
       )}
     >
       <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-sm text-white">
-        EE
+        EX
       </span>
       <span>
-        Entire<span className="text-brand">Expert</span>
+        Entire<span className="text-brand">Xperts</span>
       </span>
     </Link>
   );

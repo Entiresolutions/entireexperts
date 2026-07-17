@@ -8,7 +8,7 @@ import { QuoteForm } from "@/components/features/quote/quote-form";
 
 const title = "Request a Quote";
 const description =
-  "Get a project estimate from Entire Expert. Tell us about the service you need, your budget, and timeline, and we'll follow up within one business day.";
+  "Get a project estimate from EntireXperts. Tell us about the service you need, your budget, and timeline, and we'll follow up within one business day.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/quote" });
 

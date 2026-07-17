@@ -25,8 +25,9 @@ describe("Header", () => {
     expect(ctaLinks[0]).toHaveAttribute("href", primaryCta.href);
   });
 
-  it("exposes a Services dropdown trigger", () => {
+  it("exposes Services and Management Services dropdown triggers", () => {
     render(<Header />);
-    expect(screen.getByRole("button", { name: /services/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Services" })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Management Services" })).toBeInTheDocument();
   });
 });

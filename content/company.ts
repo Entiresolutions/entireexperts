@@ -10,9 +10,9 @@
 
 export const companyContact = {
   // TODO(owner): confirm the inbox that should receive lead notifications.
-  email: "hello@entireexpert.com",
+  email: "hello@entirexperts.com",
   // TODO(owner): add a real support/billing contact if different from the above.
-  supportEmail: "support@entireexpert.com",
+  supportEmail: "support@entirexperts.com",
   // TODO(owner): add a real phone number with country code, or remove the field
   // from the UI if the business does not take calls.
   phone: null as string | null,

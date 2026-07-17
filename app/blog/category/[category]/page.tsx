@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return buildMetadata({
     title: `${category} Articles`,
-    description: `Articles from the Entire Expert blog in the ${category} category.`,
+    description: `Articles from the EntireXperts blog in the ${category} category.`,
     path: `/blog/category/${categorySlug}`,
   });
 }

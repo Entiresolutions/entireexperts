@@ -32,9 +32,9 @@ export default function OpengraphImage() {
               background: "rgba(255,255,255,0.15)",
             }}
           >
-            EE
+            EX
           </div>
-          Entire Expert
+          EntireXperts
         </div>
         <div style={{ display: "flex", marginTop: 40, fontSize: 52, fontWeight: 700, maxWidth: 900, lineHeight: 1.15 }}>
           {siteConfig.tagline}

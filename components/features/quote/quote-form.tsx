@@ -176,7 +176,7 @@ export function QuoteForm() {
           {...register("consent")}
         />
         <label htmlFor="quote-consent" className="text-sm text-foreground-muted">
-          I agree to be contacted by Entire Expert about my enquiry. See our{" "}
+          I agree to be contacted by EntireXperts about my enquiry. See our{" "}
           <a href="/privacy-policy" className="underline hover:text-brand">
             Privacy Policy
           </a>

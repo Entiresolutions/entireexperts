@@ -1,16 +1,16 @@
 export const siteConfig = {
-  name: "Entire Expert",
-  legalName: "Entire Expert",
-  domain: "www.entireexpert.com",
-  url: "https://www.entireexpert.com",
+  name: "EntireXperts",
+  legalName: "EntireXperts",
+  domain: "www.entirexperts.com",
+  url: "https://www.entirexperts.com",
   tagline: "Software delivery partner for teams shipping real products",
   description:
-    "Entire Expert designs and builds custom software, web platforms, mobile apps, and AI-powered automation for companies that need a dependable engineering partner, not just a vendor.",
+    "EntireXperts designs and builds custom software, web platforms, mobile apps, and AI-powered automation for companies that need a dependable engineering partner, not just a vendor.",
   social: {
     // TODO(owner): replace with real profile URLs before launch, or remove unused entries.
-    linkedin: "https://www.linkedin.com/company/entireexpert",
-    twitter: "https://x.com/entireexpert",
-    github: "https://github.com/entireexpert",
+    linkedin: "https://www.linkedin.com/company/entirexperts",
+    twitter: "https://x.com/entirexperts",
+    github: "https://github.com/entirexperts",
   },
 } as const;
 
@@ -45,6 +45,19 @@ export const mainNav: (NavItem | NavGroup)[] = [
       { label: "View all services", href: "/services" },
     ],
   },
+  {
+    label: "Management Services",
+    href: "/management-services",
+    items: [
+      { label: "Call Center Services (Inbound & Outbound)", href: "/management-services/call-center-services" },
+      { label: "Customer Support Outsourcing", href: "/management-services/customer-support-outsourcing" },
+      { label: "Medical Billing Services", href: "/management-services/medical-billing-services" },
+      { label: "DME Billing Services", href: "/management-services/dme-billing-services" },
+      { label: "Trucking & Dispatch Services", href: "/management-services/trucking-dispatch-services" },
+      { label: "Back-Office & Data Entry Services", href: "/management-services/back-office-data-entry-services" },
+      { label: "View all management services", href: "/management-services" },
+    ],
+  },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Industries", href: "/industries" },
   { label: "Process", href: "/process" },
@@ -74,6 +87,14 @@ export const footerNav = {
     { label: "Software Maintenance & Support", href: "/services/software-maintenance-support" },
     { label: "Search Engine Optimization", href: "/services/search-engine-optimization" },
     { label: "Digital Marketing", href: "/services/digital-marketing" },
+  ],
+  managementServices: [
+    { label: "Call Center Services", href: "/management-services/call-center-services" },
+    { label: "Customer Support Outsourcing", href: "/management-services/customer-support-outsourcing" },
+    { label: "Medical Billing Services", href: "/management-services/medical-billing-services" },
+    { label: "DME Billing Services", href: "/management-services/dme-billing-services" },
+    { label: "Trucking & Dispatch Services", href: "/management-services/trucking-dispatch-services" },
+    { label: "Back-Office & Data Entry Services", href: "/management-services/back-office-data-entry-services" },
   ],
   company: [
     { label: "About Us", href: "/about" },

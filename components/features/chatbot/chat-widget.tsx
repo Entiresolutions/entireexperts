@@ -10,7 +10,7 @@ import type { ChatMessage } from "@/lib/chatbot/types";
 const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
-  text: "Hi, I'm the Entire Expert assistant. I can answer questions about our services, process, and pricing. I'm an automated assistant, not a person — I can connect you with the team any time.",
+  text: "Hi, I'm the EntireXperts assistant. I can answer questions about our services, process, and pricing. I'm an automated assistant, not a person — I can connect you with the team any time.",
   suggestions: ["What services do you offer?", "How much does a project cost?", "Talk to a human"],
 };
 
@@ -109,7 +109,7 @@ export function ChatWidget() {
             id={dialogId}
             role="dialog"
             aria-modal="true"
-            aria-label="Chat with Entire Expert"
+            aria-label="Chat with EntireXperts"
             initial={{ opacity: 0, y: 16, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.98 }}
@@ -118,7 +118,7 @@ export function ChatWidget() {
           >
             <header className="flex items-center justify-between border-b border-border bg-brand px-4 py-3 text-white">
               <div>
-                <p className="text-sm font-semibold">Entire Expert Assistant</p>
+                <p className="text-sm font-semibold">EntireXperts Assistant</p>
                 <p className="text-xs text-white/80">Automated assistant · not a human</p>
               </div>
               <div className="flex items-center gap-1">

@@ -7,11 +7,11 @@ import { z } from "zod";
  */
 const serverEnvSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
-  SITE_URL: z.string().url().default("https://www.entireexpert.com"),
+  SITE_URL: z.string().url().default("https://www.entirexperts.com"),
 
   RESEND_API_KEY: z.string().optional(),
-  CONTACT_TO_EMAIL: z.string().email().default("hello@entireexpert.com"),
-  CONTACT_FROM_EMAIL: z.string().email().default("no-reply@entireexpert.com"),
+  CONTACT_TO_EMAIL: z.string().email().default("hello@entirexperts.com"),
+  CONTACT_FROM_EMAIL: z.string().email().default("no-reply@entirexperts.com"),
 
   TURNSTILE_SECRET_KEY: z.string().optional(),
 
@@ -22,7 +22,7 @@ const serverEnvSchema = z.object({
 });
 
 const publicEnvSchema = z.object({
-  NEXT_PUBLIC_SITE_URL: z.string().url().default("https://www.entireexpert.com"),
+  NEXT_PUBLIC_SITE_URL: z.string().url().default("https://www.entirexperts.com"),
   NEXT_PUBLIC_TURNSTILE_SITE_KEY: z.string().optional(),
   NEXT_PUBLIC_GA_MEASUREMENT_ID: z.string().optional(),
   NEXT_PUBLIC_GTM_ID: z.string().optional(),

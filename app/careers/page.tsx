@@ -7,7 +7,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { companyContact } from "@/content/company";
 
 const title = "Careers";
-const description = "Open roles at Entire Expert and how to reach out if you don't see a current match for your background.";
+const description = "Open roles at EntireXperts and how to reach out if you don't see a current match for your background.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/careers" });
 

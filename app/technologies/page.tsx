@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 const title = "Technologies We Use";
 const description =
-  "The frontend, backend, mobile, cloud, and AI technologies Entire Expert builds with, and how we choose the right stack for each project.";
+  "The frontend, backend, mobile, cloud, and AI technologies EntireXperts builds with, and how we choose the right stack for each project.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/technologies" });
 

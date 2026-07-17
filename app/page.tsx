@@ -5,6 +5,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 import { Hero } from "@/components/features/home/hero";
 import { TrustBar } from "@/components/features/home/trust-bar";
 import { CoreServices } from "@/components/features/home/core-services";
+import { ManagementServicesSection } from "@/components/features/home/management-services-section";
 import { WhyChooseUs } from "@/components/features/home/why-choose-us";
 import { FeaturedProjects } from "@/components/features/home/featured-projects";
 import { TechStackSection } from "@/components/features/home/tech-stack-section";
@@ -19,7 +20,7 @@ import { FinalCta } from "@/components/features/home/final-cta";
 
 const title = "Custom Software Development Company";
 const description =
-  "Entire Expert is a remote-first software development company building custom software, web platforms, mobile apps, and AI-powered automation for teams that need dependable engineering capacity.";
+  "EntireXperts is a remote-first software development company building custom software, web platforms, mobile apps, and AI-powered automation for teams that need dependable engineering capacity.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/" });
 
@@ -30,6 +31,7 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <CoreServices />
+      <ManagementServicesSection />
       <WhyChooseUs />
       <FeaturedProjects />
       <TechStackSection />

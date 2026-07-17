@@ -8,9 +8,10 @@ Legend: **Intent** — I = Informational, C = Commercial investigation, T = Tran
 
 | Page | Primary keyword | Secondary / long-tail | Intent | Slug | SEO Title | H1 |
 |---|---|---|---|---|---|---|
-| Home | software development company | custom software partner, remote software team | C | `/` | Custom Software Development Company \| Entire Expert | Ship the product your roadmap keeps pushing back. |
-| About | software development company culture | remote-first engineering team | I | `/about` | About Entire Expert | A remote-first team built around a specific way of working |
+| Home | software development company | custom software partner, remote software team | C | `/` | Custom Software Development Company \| EntireXperts | Ship the product your roadmap keeps pushing back. |
+| About | software development company culture | remote-first engineering team | I | `/about` | About EntireXperts | A remote-first team built around a specific way of working |
 | Services (index) | software development services | full list of software services | C | `/services` | Software Development Services | Eighteen disciplines, each led by engineers who specialize in it |
+| Management Services (index) | outsourced business process services | BPO services, managed operations support | C | `/management-services` | Management Services | Outsourced operations support, run as an extension of your team |
 | Portfolio | software development case studies | example software projects | C | `/portfolio` | Portfolio & Case Studies | The kind of projects we take on |
 | Our Process | software development process | agile development process | I | `/process` | Our Software Development Process | A process built for visible progress, not status meetings |
 | Technologies | software development technology stack | tech stack we use | I | `/technologies` | Technologies We Use | A consistent core stack, chosen deliberately per project |
@@ -47,6 +48,19 @@ Legend: **Intent** — I = Informational, C = Commercial investigation, T = Tran
 | Search Engine Optimization | SEO services for software companies | technical SEO services | C | `/services/search-engine-optimization` |
 | Digital Marketing | digital marketing for software companies | conversion tracking setup | C | `/services/digital-marketing` |
 
+## Management service pages
+
+A separate business line (outsourced operations, not software development) with its own keyword universe so it never competes with the software service pages above.
+
+| Service | Primary keyword | Secondary / long-tail | Intent | Slug |
+|---|---|---|---|---|
+| Call Center Services (Inbound & Outbound) | call center services | inbound outbound call center outsourcing | C | `/management-services/call-center-services` |
+| Customer Support Outsourcing | customer support outsourcing | outsourced help desk services | C | `/management-services/customer-support-outsourcing` |
+| Medical Billing Services | medical billing services | outsourced medical billing company | C | `/management-services/medical-billing-services` |
+| DME Billing Services | DME billing services | durable medical equipment billing company | C | `/management-services/dme-billing-services` |
+| Trucking & Dispatch Services | trucking dispatch services | outsourced truck dispatch company | C | `/management-services/trucking-dispatch-services` |
+| Back-Office & Data Entry Services | back office outsourcing services | data entry outsourcing company | C | `/management-services/back-office-data-entry-services` |
+
 ## Industry pages
 
 | Industry | Primary keyword | Slug |
@@ -73,3 +87,4 @@ Legend: **Intent** — I = Informational, C = Commercial investigation, T = Tran
 - "software development" alone is not targeted by any single page — every page pairs it with a qualifier (company, process, cost, by industry) so they don't compete.
 - "SEO" and "digital marketing" are split into two distinct service pages with non-overlapping primary keywords, cross-linked via "Related services" rather than merged.
 - "Mobile app development" (the umbrella page) targets the platform-decision keyword, while Android/iOS/Flutter each target their own platform-specific keyword — the umbrella page links out to the three rather than duplicating their content.
+- "Services" and "Management Services" are kept as two separate keyword universes ("software development company" vs. "outsourced business process services") on purpose, so a search for a BPO term like "medical billing services" doesn't compete against or dilute the software-development positioning, and vice versa.

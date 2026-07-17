@@ -2,7 +2,7 @@ import type { CaseStudy } from "@/content/case-studies/types";
 
 /**
  * Every entry here is a demonstration case study describing the kind of work
- * Entire Expert does and how a project like it would be scoped and built —
+ * EntireXperts does and how a project like it would be scoped and built —
  * not a claim about a real, named client. Each page and card built from this
  * data must render an explicit "Illustrative example" label; do not remove it
  * or present these as verified client outcomes.

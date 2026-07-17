@@ -4,17 +4,17 @@ How pages connect to each other. Goals: every service category reachable from th
 
 ## Global navigation (every page)
 
-- **Header**: Home, About, Services (dropdown → 9 featured services + "View all services"), Portfolio, Industries, Process, Blog, Contact, plus a persistent "Start Your Project" CTA.
-- **Footer**: full list of all 18 services (two columns), Company links (About, Process, Technologies, Industries, Portfolio, Careers, Blog), Support links (Contact, Quote, FAQ, three legal pages).
-- Because the footer alone links to all 18 service pages, all industry/portfolio/blog index pages, and all legal pages from **every** page on the site, no page is more than one click from any of those hubs — this is the main anti-orphan mechanism.
+- **Header**: Home, About, Services (dropdown → 9 featured services + "View all services"), Management Services (dropdown → all 6 management services + "View all management services"), Portfolio, Industries, Process, Blog, Contact, plus a persistent "Start Your Project" CTA.
+- **Footer**: full list of all 18 software services (two columns), all 6 management services (one column), Company links (About, Process, Technologies, Industries, Portfolio, Careers, Blog), Support links (Contact, Quote, FAQ, three legal pages).
+- Because the footer alone links to all 18 software service pages, all 6 management service pages, all industry/portfolio/blog index pages, and all legal pages from **every** page on the site, no page is more than one click from any of those hubs — this is the main anti-orphan mechanism.
 
 ## Homepage → category hubs
 
-Home links out to: `/services` (index) and 9 individual service pages (Core Services section), `/portfolio` + 3 featured case studies, `/technologies`, `/process`, `/industries` + 6 industry pages, `/blog` + latest 3 posts, `/faq`, `/contact`, `/quote`.
+Home links out to: `/services` (index) and 9 individual service pages (Core Services section), `/management-services` (index) and all 6 management service pages (Management Services section), `/portfolio` + 3 featured case studies, `/technologies`, `/process`, `/industries` + 6 industry pages, `/blog` + latest 3 posts, `/faq`, `/contact`, `/quote`.
 
 ## Services index → every service detail page
 
-`/services` links to all 18 `/services/[slug]` pages (grid of cards, one per service).
+`/services` links to all 18 `/services/[slug]` pages (grid of cards, one per service). Separately, `/management-services` links to all 6 `/management-services/[slug]` pages — kept as its own index/hub rather than merged into `/services`, since it's a distinct business line (outsourced operations, not software development).
 
 ## Service detail page → related content
 
@@ -22,6 +22,8 @@ Each `/services/[slug]` page links to:
 - 3 related services (via `relatedServiceSlugs` in `content/services/*.ts`) — e.g. Flutter ↔ iOS ↔ Android ↔ Mobile App Development form a closed cluster.
 - `/industries` (contextual link from the "Industries we apply this in" section).
 - `/quote` and `/contact` (consultation/estimate CTAs).
+
+Each `/management-services/[slug]` page links to the same structure via the shared `ServicePageTemplate` component (parameterized with `basePath="/management-services"`): 1–2 related management services (via `relatedServiceSlugs` in `content/management-services/*.ts`), `/industries`, and `/quote`/`/contact`. The two service registries (`content/services` and `content/management-services`) are kept separate, so related-service links never cross between the software and management-services lines.
 
 ## Industry detail page → services and portfolio
 
@@ -51,4 +53,4 @@ Every non-home page renders breadcrumbs with `BreadcrumbList` structured data: H
 
 ## Orphan-page check
 
-Every page in `app/sitemap.ts` is reachable via at least one of: header nav, footer nav, homepage sections, a parent index page (`/services`, `/industries`, `/portfolio`, `/blog`), or contextual in-copy links from blog/case-study/service content. No page exists that is only reachable by typing its URL directly.
+Every page in `app/sitemap.ts` is reachable via at least one of: header nav, footer nav, homepage sections, a parent index page (`/services`, `/management-services`, `/industries`, `/portfolio`, `/blog`), or contextual in-copy links from blog/case-study/service content. No page exists that is only reachable by typing its URL directly.

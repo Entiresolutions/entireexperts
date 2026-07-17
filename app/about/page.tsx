@@ -6,9 +6,9 @@ import { webPageSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { Button } from "@/components/ui/button";
 
-const title = "About Entire Expert";
+const title = "About EntireXperts";
 const description =
-  "Entire Expert is a remote-first software development company built around direct communication, weekly demos, and full code ownership for our clients.";
+  "EntireXperts is a remote-first software development company built around direct communication, weekly demos, and full code ownership for our clients.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/about" });
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
         <SectionHeading as="h1"
           eyebrow="About us"
           title="A remote-first team built around a specific way of working"
-          description="Entire Expert exists to close the gap between what a business needs built and what off-the-shelf tools or a vague vendor relationship can deliver. Everything below is how we actually operate, not a mission statement written to sound good."
+          description="EntireXperts exists to close the gap between what a business needs built and what off-the-shelf tools or a vague vendor relationship can deliver. Everything below is how we actually operate, not a mission statement written to sound good."
         />
       </Section>
 

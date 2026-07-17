@@ -9,7 +9,7 @@ import { companyContact } from "@/content/company";
 
 const title = "Contact Us";
 const description =
-  "Get in touch with Entire Expert about a software project, a question about our services, or a request for a free consultation.";
+  "Get in touch with EntireXperts about a software project, a question about our services, or a request for a free consultation.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/contact" });
 

@@ -1,6 +1,6 @@
-# Entire Expert
+# EntireXperts
 
-Production website for Entire Expert, a software development company — Next.js 16 (App Router), React 19, TypeScript (strict), Tailwind CSS v4.
+Production website for EntireXperts, a software development company — Next.js 16 (App Router), React 19, TypeScript (strict), Tailwind CSS v4.
 
 ## Getting started
 

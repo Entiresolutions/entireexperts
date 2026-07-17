@@ -11,7 +11,7 @@ export type FaqEntry = {
  */
 export const generalFaqs: FaqEntry[] = [
   {
-    question: "What kinds of projects does Entire Expert take on?",
+    question: "What kinds of projects does EntireXperts take on?",
     answer:
       "We work on custom software, web platforms, mobile apps, SaaS products, and AI-assisted automation for companies that need a dedicated engineering team rather than a one-off contractor. Most engagements start with a clearly scoped product or feature and grow into an ongoing partnership.",
     keywords: ["project", "work on", "scope", "what do you do", "services"],

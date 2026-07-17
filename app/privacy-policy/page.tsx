@@ -9,7 +9,7 @@ import { companyContact } from "@/content/company";
 import { siteConfig } from "@/config/site";
 
 const title = "Privacy Policy";
-const description = "How Entire Expert collects, uses, and protects information submitted through this website.";
+const description = "How EntireXperts collects, uses, and protects information submitted through this website.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/privacy-policy" });
 

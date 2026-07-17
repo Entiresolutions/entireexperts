@@ -9,7 +9,7 @@ import { companyContact } from "@/content/company";
 import { siteConfig } from "@/config/site";
 
 const title = "Terms and Conditions";
-const description = "The terms governing use of the Entire Expert website and engagement of our services.";
+const description = "The terms governing use of the EntireXperts website and engagement of our services.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/terms-and-conditions" });
 

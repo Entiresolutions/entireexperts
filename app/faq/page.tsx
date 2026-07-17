@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 
 const title = "Frequently Asked Questions";
 const description =
-  "Answers to common questions about working with Entire Expert — pricing, process, code ownership, support, and technology choices.";
+  "Answers to common questions about working with EntireXperts — pricing, process, code ownership, support, and technology choices.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/faq" });
 

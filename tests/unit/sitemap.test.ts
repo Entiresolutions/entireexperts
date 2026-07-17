@@ -7,7 +7,7 @@ describe("sitemap", () => {
   const entries = sitemap();
 
   it("includes the homepage with the highest priority", () => {
-    const home = entries.find((entry) => entry.url === "https://www.entireexpert.com");
+    const home = entries.find((entry) => entry.url === "https://www.entirexperts.com");
     expect(home).toBeDefined();
     expect(home?.priority).toBe(1);
   });
@@ -15,7 +15,7 @@ describe("sitemap", () => {
   it("includes every service page exactly once", () => {
     const slugs = getAllServiceSlugs();
     for (const slug of slugs) {
-      const matches = entries.filter((entry) => entry.url === `https://www.entireexpert.com/services/${slug}`);
+      const matches = entries.filter((entry) => entry.url === `https://www.entirexperts.com/services/${slug}`);
       expect(matches).toHaveLength(1);
     }
   });

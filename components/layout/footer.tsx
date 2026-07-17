@@ -31,28 +31,28 @@ function FooterColumn({
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface">
-      <Container className="grid grid-cols-2 gap-10 py-14 sm:grid-cols-3 lg:grid-cols-6">
+      <Container className="grid grid-cols-2 gap-10 py-14 sm:grid-cols-3 lg:grid-cols-7">
         <div className="col-span-2 sm:col-span-3 lg:col-span-2">
           <Logo />
           <p className="mt-4 max-w-xs text-sm text-foreground-muted">{siteConfig.description}</p>
           <div className="mt-6 flex items-center gap-3">
             <a
               href={siteConfig.social.linkedin}
-              aria-label="Entire Expert on LinkedIn"
+              aria-label="EntireXperts on LinkedIn"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground-muted hover:border-brand hover:text-brand"
             >
               <LinkedInIcon className="h-4 w-4" />
             </a>
             <a
               href={siteConfig.social.github}
-              aria-label="Entire Expert on GitHub"
+              aria-label="EntireXperts on GitHub"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground-muted hover:border-brand hover:text-brand"
             >
               <GitHubIcon className="h-4 w-4" />
             </a>
             <a
               href={siteConfig.social.twitter}
-              aria-label="Entire Expert on X"
+              aria-label="EntireXperts on X"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground-muted hover:border-brand hover:text-brand"
             >
               <XIcon className="h-4 w-4" />
@@ -67,6 +67,7 @@ export function Footer() {
 
         <FooterColumn title="Services" links={footerNav.services} />
         <FooterColumn title="More services" links={footerNav.moreServices} />
+        <FooterColumn title="Management services" links={footerNav.managementServices} />
         <FooterColumn title="Company" links={footerNav.company} />
         <FooterColumn title="Support" links={footerNav.support} />
       </Container>

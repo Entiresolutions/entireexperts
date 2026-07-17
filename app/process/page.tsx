@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 const title = "Our Software Development Process";
 const description =
-  "How Entire Expert plans, builds, and ships software: discovery, design, iterative development, QA, launch, and ongoing support.";
+  "How EntireXperts plans, builds, and ships software: discovery, design, iterative development, QA, launch, and ongoing support.";
 
 export const metadata: Metadata = buildMetadata({ title, description, path: "/process" });
 

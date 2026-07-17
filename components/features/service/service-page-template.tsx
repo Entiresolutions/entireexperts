@@ -7,14 +7,28 @@ import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/ui/json-ld";
 import { breadcrumbSchema, faqPageSchema, serviceSchema, webPageSchema } from "@/lib/seo/schema";
 import type { ServiceContent } from "@/content/services/types";
-import { getRelatedServices } from "@/content/services";
 
-export function ServicePageTemplate({ service }: { service: ServiceContent }) {
-  const path = `/services/${service.slug}`;
-  const relatedServices = getRelatedServices(service);
+export function ServicePageTemplate({
+  service,
+  relatedServices,
+  basePath = "/services",
+  indexLabel = "Services",
+  techSectionLabel = "Technologies we use",
+  ctaHeading,
+  secondaryCtaLabel = "Talk to a software expert",
+}: {
+  service: ServiceContent;
+  relatedServices: ServiceContent[];
+  basePath?: string;
+  indexLabel?: string;
+  techSectionLabel?: string;
+  ctaHeading?: string;
+  secondaryCtaLabel?: string;
+}) {
+  const path = `${basePath}/${service.slug}`;
   const breadcrumbItems = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
+    { name: indexLabel, path: basePath },
     { name: service.name, path },
   ];
 
@@ -79,7 +93,7 @@ export function ServicePageTemplate({ service }: { service: ServiceContent }) {
           ))}
         </div>
 
-        <h2 className="mt-12 font-display text-2xl font-semibold text-foreground">Technologies we use</h2>
+        <h2 className="mt-12 font-display text-2xl font-semibold text-foreground">{techSectionLabel}</h2>
         <div className="mt-5 flex flex-wrap gap-2">
           {service.technologies.map((tech) => (
             <span key={tech} className="rounded-full bg-brand-soft px-3.5 py-1.5 text-sm font-medium text-brand-strong">
@@ -145,7 +159,7 @@ export function ServicePageTemplate({ service }: { service: ServiceContent }) {
             {relatedServices.map((related) => (
               <Link
                 key={related.slug}
-                href={`/services/${related.slug}`}
+                href={`${basePath}/${related.slug}`}
                 className="group rounded-2xl border border-border bg-background p-5 transition-colors hover:border-brand"
               >
                 <h3 className="flex items-center gap-1.5 font-semibold text-foreground">
@@ -163,7 +177,7 @@ export function ServicePageTemplate({ service }: { service: ServiceContent }) {
 
       <Section className="text-center">
         <h2 className="font-display text-2xl font-semibold text-foreground sm:text-3xl">
-          Ready to talk through your {service.name.toLowerCase()} project?
+          {ctaHeading ?? `Ready to talk through your ${service.name.toLowerCase()} project?`}
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-foreground-muted">
           Tell us about your requirements and we’ll follow up within one business day with next steps.
@@ -173,7 +187,7 @@ export function ServicePageTemplate({ service }: { service: ServiceContent }) {
             Get a project estimate
           </Button>
           <Button href="/contact" variant="outline" size="lg">
-            Talk to a software expert
+            {secondaryCtaLabel}
           </Button>
         </div>
       </Section>
