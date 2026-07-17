@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Entire Expert
 
-## Getting Started
+Production website for Entire Expert, a software development company — Next.js 16 (App Router), React 19, TypeScript (strict), Tailwind CSS v4.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in real values as you have them; every field has a safe default
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Local development server (Turbopack) |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run typecheck` | TypeScript, no emit |
+| `npm run test` | Vitest unit tests |
+| `npm run test:watch` | Vitest in watch mode |
+| `npm run test:e2e` | Playwright end-to-end tests (spins up its own dev server on port 3412) |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/                  Routes (App Router) — pages, layouts, API route handlers, sitemap/robots/manifest/icons
+components/
+  ui/                 Reusable, unstyled-by-default primitives (Button, Card, Accordion, JsonLd, ...)
+  layout/             Header, Footer, mobile nav, announcement bar
+  providers/          Theme + Framer Motion providers
+  features/           Feature-specific components (home sections, chatbot, forms, blog, service template)
+lib/                  Server-side services: email, SEO metadata/schema builders, rate limiting, validation
+                       helpers, chatbot provider, blog/MDX loader, motion variants
+content/              All owner-editable content: services, industries, case studies, blog posts (MDX),
+                       FAQs, company facts (config/site.ts holds structural nav/site config, separately)
+config/               site.ts (nav, CTAs, site metadata), env.ts (Zod-validated environment variables)
+docs/                 SEO keyword map, internal linking map, deployment guide, production readiness report
+tests/
+  unit/               Vitest + Testing Library
+  e2e/                Playwright
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Documentation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [`docs/deployment.md`](docs/deployment.md) — environment variables, Vercel setup, Google Search Console setup, post-deploy checklist.
+- [`docs/production-readiness-report.md`](docs/production-readiness-report.md) — what's done, what's a deliberate placeholder pending real data, and the remaining owner action items before launch. **Read this before treating the site as launch-ready.**
+- [`docs/seo-keyword-map.md`](docs/seo-keyword-map.md) — primary/secondary keyword assignment per page.
+- [`docs/internal-linking-map.md`](docs/internal-linking-map.md) — how pages link to each other and how orphan pages are prevented.
 
-## Deploy on Vercel
+## Adding content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See "Content-management instructions" at the bottom of [`docs/production-readiness-report.md`](docs/production-readiness-report.md) for how to add a blog post, service page, industry, or case study without touching routing code.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Environment variables
+
+See [`.env.example`](.env.example) for the full list. Every variable has a safe default or is optional — the app runs locally with no configuration.

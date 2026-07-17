@@ -1,0 +1,47 @@
+---
+title: "SaaS Product Development: From Idea to Launch"
+description: "A stage-by-stage guide to building a SaaS product, from validating the idea through architecture decisions, MVP scope, and the first post-launch iterations."
+category: "Product Strategy"
+author: "Entire Expert Team"
+datePublished: "2026-06-29"
+dateModified: "2026-06-29"
+status: "published"
+---
+
+Building a SaaS product is less about writing code quickly and more about sequencing decisions correctly — architecture choices made in month one determine how expensive changes are in month twelve. Here's how that sequence typically plays out.
+
+## Validate before you scope
+
+Before any architecture conversation, the idea needs a real answer to one question: who specifically has this problem badly enough to pay for a solution? If the answer is "small businesses" or "teams," it's too broad to design around. The more specific the target user, the easier every downstream decision becomes — what features matter, what integrations are worth building, and what can wait.
+
+## Decide your MVP scope by what you need to learn, not what you can build
+
+The most common mistake in early SaaS development is scoping the MVP around every feature the long-term vision requires, rather than the smallest version that answers your riskiest open question. If you're not sure anyone will pay for the core workflow, build that workflow and nothing else first. Billing, team permissions, and admin dashboards can come after you've confirmed the core loop works.
+
+## Architecture decisions that are expensive to change later
+
+A few decisions are worth getting right from the start, because retrofitting them later means migrating live customer data:
+
+- **Multi-tenancy model** — whether customer data is isolated by row, schema, or database affects nearly every query you write from day one.
+- **Authentication and permissions** — even if you launch with one role per account, design the data model assuming teams and multiple roles will eventually exist, since that's the most common expansion path.
+- **Billing integration** — decide early whether pricing will be seat-based, usage-based, or flat-rate, since this shapes how you track and report usage internally.
+
+Everything else — the specific UI, individual feature implementations, even your frontend framework choice — is comparatively cheap to change later. These three are not.
+
+## Build in iterations, with real users in the loop early
+
+The SaaS products that find product-market fit fastest tend to get a working version in front of real users well before the "complete" feature list is done. Feedback from five real users using the core workflow is worth more than internal debate about the fifteenth feature. This is also where a [structured development process](/process) with regular demos pays off — it creates natural checkpoints to bring users back in.
+
+## Plan for the first 90 days post-launch, not just launch day
+
+Launch is a milestone, not a finish line. The first three months after release are usually when you learn the most: which features nobody uses, where onboarding loses people, and what support questions come up repeatedly. Budget engineering time for this period explicitly — it's normal for a meaningful share of post-launch work to be adjustments based on real usage rather than new features from the original roadmap.
+
+## Common sequencing mistakes to avoid
+
+- Building the admin dashboard and internal tooling before validating the core customer-facing workflow.
+- Adding enterprise features (SSO, granular permissions, audit logs) before you have an enterprise customer asking for them.
+- Choosing a complex multi-region infrastructure setup before you have the traffic that requires it.
+
+## Where to start
+
+If you're scoping a SaaS product and want a second opinion on sequencing or architecture decisions, our [SaaS Product Development](/services/saas-product-development) page covers how we approach discovery and MVP scope in more detail. You can also [request a quote](/quote) to talk through your specific idea.
