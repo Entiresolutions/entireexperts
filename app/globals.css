@@ -72,7 +72,14 @@
   --font-display: var(--font-display-face);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
@@ -80,6 +87,140 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Premium homepage utilities — decorative, theme-aware, reduced-motion
+ * safe (every keyframe animation is disabled by the block above).
+ * ------------------------------------------------------------------ */
+
+/* Brand → accent gradient text for highlighted headline phrases. */
+.text-gradient-brand {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-brand) 0%,
+    var(--color-accent) 55%,
+    var(--color-brand) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-brand-animated {
+  animation: text-shine 6s linear infinite;
+}
+
+/* Glassmorphism surface used by the scrolled navbar and floating cards. */
+.glass {
+  background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+}
+
+.glass-strong {
+  background: color-mix(in srgb, var(--color-surface) 85%, transparent);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+}
+
+/* Subtle grid / dot decorative backdrops driven by the theme border color. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(var(--color-border) 1.1px, transparent 1.1px);
+  background-size: 22px 22px;
+}
+
+/* Fade a decorative layer out toward the edges so it never fights text. */
+.mask-radial-faded {
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 40%, transparent 100%);
+}
+
+.mask-b-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+
+/* Edge fade for horizontal marquees. */
+.mask-x-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* Infinite marquee — pure CSS transform, pauses on hover. */
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.marquee-group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+.animate-aurora {
+  animation: aurora 18s ease-in-out infinite;
+}
+
+/* Rotating conic border used on premium CTA cards. */
+.animate-border-spin {
+  animation: border-spin 8s linear infinite;
+}
+
+@keyframes text-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes aurora {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  33% {
+    transform: translate3d(3%, -4%, 0) scale(1.08);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate3d(-3%, 3%, 0) scale(0.96);
+    opacity: 0.6;
+  }
+}
+
+@keyframes border-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 

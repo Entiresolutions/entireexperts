@@ -6,6 +6,7 @@ import { MotionProvider } from "@/components/providers/motion-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { SkipLink } from "@/components/ui/skip-link";
 import { JsonLd } from "@/components/ui/json-ld";
 import { ChatWidget } from "@/components/features/chatbot/chat-widget";
@@ -71,11 +72,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="flex min-h-full flex-col bg-background text-foreground" suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <MotionProvider>
             <JsonLd data={[organizationSchema(), websiteSchema()]} />
             <SkipLink />
+            <ScrollProgress />
             <AnnouncementBar />
             <Header />
             <main id="main-content" className="flex-1">

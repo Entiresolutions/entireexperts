@@ -33,9 +33,13 @@ export function IndustriesSection() {
             <motion.div key={industry.slug} variants={fadeUp}>
               <Link
                 href={`/industries/${industry.slug}`}
-                className="block h-full rounded-2xl border border-border bg-background p-6 transition-colors duration-200 hover:border-brand"
+                className="group relative block h-full overflow-hidden rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5"
               >
-                <h3 className="font-semibold text-foreground">{industry.name}</h3>
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand to-accent transition-transform duration-300 group-hover:scale-x-100"
+                />
+                <h3 className="font-semibold text-foreground transition-colors group-hover:text-brand">{industry.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{industry.summary}</p>
               </Link>
             </motion.div>

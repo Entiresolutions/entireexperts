@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, Globe, Smartphone, Boxes, Bot, ShoppingCart, Palette, Cloud, Wrench } from "lucide-react";
 import Link from "next/link";
 import { SectionHeading } from "@/components/ui/section";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { DotBackdrop } from "@/components/ui/backgrounds";
 import { fadeUp, staggerChildren, viewportOnce } from "@/lib/motion";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -13,6 +16,7 @@ const services = [
     title: "Custom Software Development",
     description: "Purpose-built systems for workflows off-the-shelf tools can't handle.",
     href: "/services/custom-software-development",
+    featured: true,
   },
   {
     icon: Globe,
@@ -66,7 +70,8 @@ const services = [
 
 export function CoreServices() {
   return (
-    <section id="services" className="py-16 sm:py-20 lg:py-24">
+    <section id="services" className="relative py-16 sm:py-20 lg:py-24">
+      <DotBackdrop className="mask-b-fade" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
           <SectionHeading
@@ -83,27 +88,38 @@ export function CoreServices() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          variants={staggerChildren()}
+          variants={staggerChildren(0.06)}
           className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((service) => (
-            <motion.div key={service.href} variants={fadeUp}>
-              <Link
-                href={service.href}
-                className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-lg hover:shadow-brand/10"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                  <service.icon className="h-5 w-5" aria-hidden />
-                </span>
-                <h3 className="mt-4 flex items-center gap-1.5 text-base font-semibold text-foreground">
-                  {service.title}
-                  <ArrowUpRight
-                    className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
-                    aria-hidden
-                  />
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{service.description}</p>
-              </Link>
+            <motion.div
+              key={service.href}
+              variants={fadeUp}
+              className={cn(service.featured && "sm:col-span-2 lg:col-span-1")}
+            >
+              <SpotlightCard className="h-full rounded-2xl">
+                <Link
+                  href={service.href}
+                  className={cn(
+                    "group/card relative flex h-full flex-col rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/10",
+                    service.featured
+                      ? "border-brand/30 bg-gradient-to-br from-brand-soft/60 to-surface"
+                      : "border-border bg-surface hover:border-brand/50"
+                  )}
+                >
+                  <span className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand to-accent text-white shadow-lg shadow-brand/20 transition-transform duration-300 group-hover/card:scale-110">
+                    <service.icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <h3 className="mt-5 flex items-center gap-1.5 text-base font-semibold text-foreground">
+                    {service.title}
+                    <ArrowUpRight
+                      className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-200 group-hover/card:translate-x-0 group-hover/card:opacity-100"
+                      aria-hidden
+                    />
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{service.description}</p>
+                </Link>
+              </SpotlightCard>
             </motion.div>
           ))}
         </motion.div>

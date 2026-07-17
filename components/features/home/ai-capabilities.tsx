@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { Workflow, MessageSquareText, FileSearch, Zap } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { GridBackdrop } from "@/components/ui/backgrounds";
 import { fadeUp, staggerChildren, viewportOnce } from "@/lib/motion";
 
 const capabilities = [
@@ -31,7 +33,8 @@ const capabilities = [
 
 export function AiCapabilities() {
   return (
-    <section className="py-16 sm:py-20 lg:py-24">
+    <section className="relative py-16 sm:py-20 lg:py-24">
+      <GridBackdrop className="mask-b-fade" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="AI & automation"
@@ -44,17 +47,21 @@ export function AiCapabilities() {
           whileInView="visible"
           viewport={viewportOnce}
           variants={staggerChildren()}
-          className="mt-12 grid gap-6 sm:grid-cols-2"
+          className="mt-12 grid gap-5 sm:grid-cols-2"
         >
           {capabilities.map((capability) => (
-            <motion.div key={capability.title} variants={fadeUp} className="flex gap-4 rounded-2xl border border-border bg-surface p-6">
-              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                <capability.icon className="h-5 w-5" aria-hidden />
-              </span>
-              <div>
-                <h3 className="font-semibold text-foreground">{capability.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-foreground-muted">{capability.description}</p>
-              </div>
+            <motion.div key={capability.title} variants={fadeUp}>
+              <SpotlightCard className="h-full rounded-2xl">
+                <div className="group flex h-full gap-4 rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5">
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand to-accent text-white shadow-md shadow-brand/20 transition-transform duration-300 group-hover:scale-110">
+                    <capability.icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-foreground">{capability.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-foreground-muted">{capability.description}</p>
+                  </div>
+                </div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </motion.div>

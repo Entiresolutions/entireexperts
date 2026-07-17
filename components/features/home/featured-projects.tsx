@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { caseStudies } from "@/content/case-studies";
 import { fadeUp, staggerChildren, viewportOnce } from "@/lib/motion";
 
@@ -33,25 +34,44 @@ export function FeaturedProjects() {
           variants={staggerChildren()}
           className="mt-12 grid gap-6 lg:grid-cols-3"
         >
-          {featured.map((project) => (
+          {featured.map((project, i) => (
             <motion.div key={project.slug} variants={fadeUp}>
-              <Link
-                href={`/portfolio/${project.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brand hover:shadow-lg hover:shadow-brand/10"
-              >
-                <Badge variant="accent" className="w-fit">
-                  Illustrative example
-                </Badge>
-                <h3 className="mt-4 text-base font-semibold text-foreground">{project.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-foreground-muted">{project.summary}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
-                  Read the case study
-                  <ArrowUpRight
-                    className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
-                    aria-hidden
-                  />
-                </span>
-              </Link>
+              <SpotlightCard className="h-full rounded-2xl">
+                <Link
+                  href={`/portfolio/${project.slug}`}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1.5 hover:border-brand/50 hover:shadow-xl hover:shadow-brand/10"
+                >
+                  {/* Abstract project "cover" — gradient + grid, no fake screenshots */}
+                  <div className="relative h-32 overflow-hidden border-b border-border">
+                    <div
+                      className={
+                        "absolute inset-0 transition-transform duration-500 group-hover:scale-105 " +
+                        (i % 3 === 0
+                          ? "bg-gradient-to-br from-brand/25 to-accent/15"
+                          : i % 3 === 1
+                            ? "bg-gradient-to-br from-accent/25 to-brand/15"
+                            : "bg-gradient-to-br from-brand/20 via-accent/15 to-brand/20")
+                      }
+                    />
+                    <div className="absolute inset-0 bg-grid opacity-40 [mask-image:linear-gradient(to_bottom,#000,transparent)]" />
+                    <span className="absolute left-4 top-4">
+                      <Badge variant="accent">Illustrative example</Badge>
+                    </span>
+                  </div>
+
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-base font-semibold text-foreground">{project.title}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-foreground-muted">{project.summary}</p>
+                    <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand">
+                      Read the case study
+                      <ArrowUpRight
+                        className="h-4 w-4 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+                        aria-hidden
+                      />
+                    </span>
+                  </div>
+                </Link>
+              </SpotlightCard>
             </motion.div>
           ))}
         </motion.div>

@@ -36,4 +36,18 @@ export const scaleIn: Variants = {
   },
 };
 
+/** Slightly larger travel + soft blur for hero-scale reveals. */
+export const blurUp: Variants = {
+  hidden: { opacity: 0, y: 22, filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
+/** Shared ease used for imperative hover/press transitions. */
+export const easeOutExpo = [0.22, 1, 0.36, 1] as const;
+
 export const viewportOnce = { once: true, margin: "-80px 0px" } as const;
